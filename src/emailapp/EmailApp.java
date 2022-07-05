@@ -12,7 +12,7 @@ public class EmailApp {
 		System.out.println("Last Name : ");
 		String lastName = scan.nextLine();
 		Email email = new Email(firstName, lastName);
-		
+		System.out.println(email.getPersonInfo());
 	}
 
 }

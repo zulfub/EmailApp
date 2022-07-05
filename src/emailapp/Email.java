@@ -9,7 +9,7 @@ public class Email {
 	private String department;
 	private String email;
 	private int defaultPasswordLenght =10;
-	private int mailboxCapacity;
+	private int mailboxCapacity=500;
 	private String alternateEmail;
 	private String companySuffix = "skuld.com";
 	
@@ -17,11 +17,9 @@ public class Email {
 	public Email(String firstName , String lastName) {
 		// 'This' for class level variable 
 		this.firstName = firstName;
-		this.lastName = lastName;
-		System.out.println("Email Created : " + this.firstName + " " +this.lastName );		
+		this.lastName = lastName;	
 		//Calling a method for asking for department - return the department
 		this.department = setDepartment();
-		System.out.println("Department : " + this.department);
 		
 		//Call a method - return a random password
 		this.password = randPassWord(defaultPasswordLenght);
@@ -29,7 +27,6 @@ public class Email {
 		
 		//Combine elements to generate mail
 		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase() + "." + companySuffix;
-		System.out.println("Your email is : " + email);
 		
 	}
 	
@@ -56,7 +53,33 @@ public class Email {
 	}
 	
 	//Set the mailbox capacity
-	
+	public void setMailBoxCapacity(int capacity) {
+		this.mailboxCapacity = capacity;
+	}
 	//Set the alternate Email
-	
+	public void setAlternateEmail(String alterEmail) {
+		this.alternateEmail = alternateEmail;
+		
+	}
+	//Change Password
+	public void setPassword(String passwrd) {
+		this.password = passwrd;
+		
+	}
+	public int getMailBoxCapacity() {
+		return mailboxCapacity;	
+		}
+	public String getAlternateEmail() {
+		return alternateEmail;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public String getPersonInfo() {
+		
+		return "Display Name : " + firstName + " " + lastName +
+				"\nCompany Email : " + email + 
+				"\nMailBox Capacity : " + mailboxCapacity + "MB";
+		
+	}
 }
